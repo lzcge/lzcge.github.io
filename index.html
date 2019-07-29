@@ -156,6 +156,441 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-前端传递时间映射到后端的Date类型问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/29/前端传递时间映射到后端的Date类型问题/">前端传递时间映射到后端的Date类型问题</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/29/前端传递时间映射到后端的Date类型问题/" class="archive-article-date">
+  	<time datetime="2019-07-29T01:15:48.500Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+
+
+<p><strong>spring boot 写法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JsonFormat</span>(pattern = <span class="string">"yyyy-MM-dd HH:mm:ss"</span>, timezone = <span class="string">"GMT+8"</span>)</span><br><span class="line"></span><br><span class="line"> <span class="keyword">private</span> Date time;</span><br></pre></td></tr></table></figure>
+<p><strong>spring mvc 写法</strong></p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@DateTimeFormat</span>(pattern=<span class="string">"yyyy-MM-dd HH:mm:ss"</span>)</span><br><span class="line"><span class="keyword">private</span> Date orderReturnTime;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小问题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/29/前端传递时间映射到后端的Date类型问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ajax提交表单数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/29/ajax提交表单数据/">ajax提交表单数据</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/29/ajax提交表单数据/" class="archive-article-date">
+  	<time datetime="2019-07-29T01:12:59.609Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+
+
+
+
+<h2 id="表单数据的提交"><a href="#表单数据的提交" class="headerlink" title="表单数据的提交"></a>表单数据的提交</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">function <span class="title">ajaxAction</span><span class="params">()</span></span>&#123;</span><br><span class="line">   </span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            type : <span class="string">"POST"</span>,</span><br><span class="line">            dataType : <span class="string">"json"</span>,</span><br><span class="line">            contentType : <span class="string">"application/x-www-form-urlencoded;charset=UTF-8"</span>,</span><br><span class="line">            url : url,<span class="comment">//url</span></span><br><span class="line">            data : $(<span class="string">"#form1"</span>).serialize().concat($(<span class="string">"#form2"</span>).serialize()).concat($(<span class="string">"#form3"</span>).serialize()),</span><br><span class="line">            beforeSend: function() &#123;</span><br><span class="line">            &#125;,</span><br><span class="line">            success : function(result) &#123;</span><br><span class="line">            &#125;,</span><br><span class="line">            error : function() &#123;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2019/07/29/ajax提交表单数据/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/29/ajax提交表单数据/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-一直连接不上数据库，然而在本地通过navicat却能连接上" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/29/一直连接不上数据库，然而在本地通过navicat却能连接上/">一直连接不上数据库，然而在本地通过navicat却能连接上</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/29/一直连接不上数据库，然而在本地通过navicat却能连接上/" class="archive-article-date">
+  	<time datetime="2019-07-29T01:01:41.939Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+
+<blockquote>
+<p>Error querying database.  Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server.)<br> The error may exist in mappers/BizzStepMapper.xml<br> The error may involve utry.iusher.dao.BizzStepMapper.selectByBizzId<br>The error occurred while executing a query<br> Cause: org.springframework.jdbc.CannotGetJdbcConnectionException: Could not get JDBC Connection; nested exception is org.apache.commons.dbcp.SQLNestedException: Cannot create PoolableConnectionFactory (Could not create connection to database server.)] with root cause<br> java.lang.NullPointerException<br>    at com.mysql.jdbc.ConnectionImpl.getServerCharacterEncoding(ConnectionImpl.java:3303)<br>    at com.mysql.jdbc.MysqlIO.sendConnectionAttributes(MysqlIO.java:1987)</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2019/07/29/一直连接不上数据库，然而在本地通过navicat却能连接上/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小问题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/29/一直连接不上数据库，然而在本地通过navicat却能连接上/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-classpath下的配置文件读不到的情况" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/29/classpath下的配置文件读不到的情况/">classpath下的配置文件读不到的情况</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/29/classpath下的配置文件读不到的情况/" class="archive-article-date">
+  	<time datetime="2019-07-29T00:59:47.668Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+
+<h3 id="原来的配置文件写法"><a href="#原来的配置文件写法" class="headerlink" title="原来的配置文件写法"></a>原来的配置文件写法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name=<span class="string">"mapperLocations"</span> value=<span class="string">"classpath:mapper/*.xml"</span> /&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>在classpath下加个*如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name=<span class="string">"mapperLocations"</span> value=<span class="string">"classpath*:mapper/*.xml"</span> /&gt;</span><br></pre></td></tr></table></figure></p>
+        
+          <a class="article-more-a" href="/2019/07/29/classpath下的配置文件读不到的情况/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小问题</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/29/classpath下的配置文件读不到的情况/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java连接Mysql数据库警告：Establishing SSL connection without server’s identity verification is not recommen" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/29/Java连接Mysql数据库警告：Establishing SSL connection without server’s identity verification is not recommen/">Java连接Mysql数据库警告：Establishing SSL connection without server’s identity verification is not recommen</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/29/Java连接Mysql数据库警告：Establishing SSL connection without server’s identity verification is not recommen/" class="archive-article-date">
+  	<time datetime="2019-07-29T00:55:19.378Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+
+
+<blockquote>
+<p>url=jdbc:mysql://127.0.0.1:3306/framework?characterEncoding=utf8&amp;useSSL=true</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">小问题</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/29/Java连接Mysql数据库警告：Establishing SSL connection without server’s identity verification is not recommen/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ssm框架搭建详细教程IDEA" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -176,7 +611,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="首先搭建出来的效果如下："><a href="#首先搭建出来的效果如下：" class="headerlink" title="首先搭建出来的效果如下："></a>首先搭建出来的效果如下：</h2><p><img src="https://img-blog.csdnimg.cn/2019050901301769.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzQwNTUzODM3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+        <hr>
+
+<h2 id="首先搭建出来的效果如下："><a href="#首先搭建出来的效果如下：" class="headerlink" title="首先搭建出来的效果如下："></a>首先搭建出来的效果如下：</h2><p><img src="https://img-blog.csdnimg.cn/2019050901301769.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzQwNTUzODM3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
         
           <a class="article-more-a" href="/2019/05/09/ssm框架搭建详细教程IDEA/#more">more >></a>
         
@@ -256,7 +693,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  HashMap概述</p>
+        <hr>
+
+<p>  HashMap概述</p>
 <blockquote>
 <p>HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。</p>
 </blockquote>
@@ -342,7 +781,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div class="blog-content-box"><br><br><h3 id="一文件与目录操作"><a name="t1"></a>一、文件与目录操作</h3><br><br><br><br><pre class="prettyprint" name="code"><code class="hljs perl has-numbering">basename：从文件名中去掉路径和扩展名<br>cd：切换当前工作目录到指定目录<br>chgrp：改变文件所属组<br><span class="hljs-keyword">chmod</span>：改变文件的权限<br><span class="hljs-keyword">chown</span>：改变文件的所有者和组<br>cp：复制文件或目录<br>dd：复制文件并转换文件内容<br>file：确定文件类型<br>find：在指定目录下查找文件并执行指定的操作<br>ln：创建文件链接<br>locate/slocate：快速定位文件的路径<br>ls/dir/vdir：显示目录内容<br><span class="hljs-keyword">mkdir</span>：创建目录<br>mv：移动或重命名文件<br>pwd：显示当前工作目录<br><span class="hljs-keyword">rename</span>：重命名文件<br>rm：删除文件或目录<br><span class="hljs-keyword">rmdir</span>：删除空目录<br>touch：修改文件的时间属性<br>updatedb：创建或更新slocate数据库<br>whereis：显示指令程序、源代码和man手册页<br>which：显示指令的绝对路径</code></pre><br><br>
+        <hr>
+
+
+<div class="blog-content-box"><br><br><h3 id="一文件与目录操作"><a name="t1"></a>一、文件与目录操作</h3><br><br><br><br><pre class="prettyprint" name="code"><code class="hljs perl has-numbering">basename：从文件名中去掉路径和扩展名<br>cd：切换当前工作目录到指定目录<br>chgrp：改变文件所属组<br><span class="hljs-keyword">chmod</span>：改变文件的权限<br><span class="hljs-keyword">chown</span>：改变文件的所有者和组<br>cp：复制文件或目录<br>dd：复制文件并转换文件内容<br>file：确定文件类型<br>find：在指定目录下查找文件并执行指定的操作<br>ln：创建文件链接<br>locate/slocate：快速定位文件的路径<br>ls/dir/vdir：显示目录内容<br><span class="hljs-keyword">mkdir</span>：创建目录<br>mv：移动或重命名文件<br>pwd：显示当前工作目录<br><span class="hljs-keyword">rename</span>：重命名文件<br>rm：删除文件或目录<br><span class="hljs-keyword">rmdir</span>：删除空目录<br>touch：修改文件的时间属性<br>updatedb：创建或更新slocate数据库<br>whereis：显示指令程序、源代码和man手册页<br>which：显示指令的绝对路径</code></pre><br><br>
         
           <a class="article-more-a" href="/2019/04/17/linux常用命令/#more">more >></a>
         
@@ -418,7 +860,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>多态是同一个行为具有多个不同表现形式或形态的能力。</strong></p>
+        <hr>
+
+<p><strong>多态是同一个行为具有多个不同表现形式或形态的能力。</strong></p>
 <p><strong>多态就是同一个接口，使用不同的实例而执行不同操作</strong>，如图所示：</p>
 <p><img src="https://img-blog.csdnimg.cn/20190324195840812.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzQwNTUzODM3,size_16,color_FFFFFF,t_70" alt></p>
 <p><strong>多态性是对象多种表现形式的体现</strong>。</p>
@@ -511,7 +955,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="递归方式"><a href="#递归方式" class="headerlink" title="递归方式"></a><em>递归方式</em></h1><h2 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;<span class="comment">//递归写法</span></span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    res.add(root.val);</span><br><span class="line">    postorderTraversal(root.left);</span><br><span class="line">    postorderTraversal(root.right);    </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <hr>
+
+<h1 id="递归方式"><a href="#递归方式" class="headerlink" title="递归方式"></a><em>递归方式</em></h1><h2 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;<span class="comment">//递归写法</span></span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    res.add(root.val);</span><br><span class="line">    postorderTraversal(root.left);</span><br><span class="line">    postorderTraversal(root.right);    </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2019/03/19/更简单的非递归遍历二叉树/#more">more >></a>
         
@@ -567,222 +1013,10 @@
 
 
   
-    <article id="post-springboot+mybatis MyBatis查询返回Map时设置值为null的字段没有在结果集中" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/04/springboot+mybatis MyBatis查询返回Map时设置值为null的字段没有在结果集中/">springboot+mybatis MyBatis查询返回Map时设置值为null的字段没有在结果集中</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/04/springboot+mybatis MyBatis查询返回Map时设置值为null的字段没有在结果集中/" class="archive-article-date">
-  	<time datetime="2019-03-04T07:16:07.052Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##<br>整合mybatis时设置mybatis:call-setters-on-nulls: true</p>
-<p>或者在mybatis的配置文件中加入</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">​</span><br><span class="line">&lt;settings&gt;</span><br><span class="line">&lt;setting name=<span class="string">"callSettersOnNulls"</span> value=<span class="string">"true"</span>/&gt;</span><br><span class="line">&lt;/settings&gt;</span><br><span class="line"></span><br><span class="line">​</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/04/springboot+mybatis MyBatis查询返回Map时设置值为null的字段没有在结果集中/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-springboot+shiro+react前后端分离跨域接收token " class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/02/springboot+shiro+react前后端分离跨域接收token /">springboot+shiro+react前后端分离跨域接收token</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/02/springboot+shiro+react前后端分离跨域接收token /" class="archive-article-date">
-  	<time datetime="2019-03-02T11:33:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>问题背景</strong></p>
-<blockquote>
-<p>背景：<br>        springboot+react+shiro进行前后端分离时进行跨域登录保持session会话时，解决了session会话后后台无法接收到token。<br>问题：         在正式发送Headers 信息之前浏览器会去向 Server 端发送一个 OPTIONS 请求，         看 Server 返回的<br>“Access-Control-Allow-Headers” 是否有自定义的 header<br>        字段。原来CROS复杂请求时会先发送一个OPTIONS请求，来测试服务器是否支<br>        持本次请求，这个请求时不带数据的，请求成功后才会发送真实的请求。所以前<br>        面那个只发送key的问题是要确认服务器支不支持接收这个headers。</p>
-</blockquote>
-<p><strong>解决办法：</strong><br>            <strong>1.维持会话</strong>：<br>            为增加可靠性，sessionId的管理使用了shiro-redis开源插件，避免sessionId断电丢失，同时使得多端可共享session<br>            pom.xml代码如下</p>
-        
-          <a class="article-more-a" href="/2019/03/02/springboot+shiro+react前后端分离跨域接收token /#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/02/springboot+shiro+react前后端分离跨域接收token /">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/02/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/02/hello-world/" class="archive-article-date">
-  	<time datetime="2019-03-02T11:25:50.116Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/02/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -877,6 +1111,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
               </li>
              
               <li class="article-tag-list-item">

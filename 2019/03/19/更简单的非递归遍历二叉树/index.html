@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>更简单的非递归遍历二叉树 | lzcge的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="递归方式前序遍历123456789public List&amp;lt;Integer&amp;gt; res = new ArrayList&amp;lt;Integer&amp;gt;();public List&amp;lt;Integer&amp;gt; postorderTraversal(TreeNode root) &amp;#123;//递归写法    if(root == null)        return res;    res">
+  <meta name="description" content="递归方式前序遍历123456789public List&amp;lt;Integer&amp;gt; res = new ArrayList&amp;lt;Integer&amp;gt;();public List&amp;lt;Integer&amp;gt; postorderTraversal(TreeNode root) &amp;#123;//递归写法    if(root == null)        return res;    r">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="更简单的非递归遍历二叉树">
 <meta property="og:url" content="http://yoursite.com/2019/03/19/更简单的非递归遍历二叉树/index.html">
 <meta property="og:site_name" content="lzcge的博客">
-<meta property="og:description" content="递归方式前序遍历123456789public List&amp;lt;Integer&amp;gt; res = new ArrayList&amp;lt;Integer&amp;gt;();public List&amp;lt;Integer&amp;gt; postorderTraversal(TreeNode root) &amp;#123;//递归写法    if(root == null)        return res;    res">
+<meta property="og:description" content="递归方式前序遍历123456789public List&amp;lt;Integer&amp;gt; res = new ArrayList&amp;lt;Integer&amp;gt;();public List&amp;lt;Integer&amp;gt; postorderTraversal(TreeNode root) &amp;#123;//递归写法    if(root == null)        return res;    r">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-19T14:05:40.186Z">
+<meta property="og:updated_time" content="2019-07-29T01:37:55.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="更简单的非递归遍历二叉树">
-<meta name="twitter:description" content="递归方式前序遍历123456789public List&amp;lt;Integer&amp;gt; res = new ArrayList&amp;lt;Integer&amp;gt;();public List&amp;lt;Integer&amp;gt; postorderTraversal(TreeNode root) &amp;#123;//递归写法    if(root == null)        return res;    res">
+<meta name="twitter:description" content="递归方式前序遍历123456789public List&amp;lt;Integer&amp;gt; res = new ArrayList&amp;lt;Integer&amp;gt;();public List&amp;lt;Integer&amp;gt; postorderTraversal(TreeNode root) &amp;#123;//递归写法    if(root == null)        return res;    r">
   
     <link rel="alternative" href="/atom.xml" title="lzcge的博客" type="application/atom+xml">
   
@@ -179,7 +179,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="递归方式"><a href="#递归方式" class="headerlink" title="递归方式"></a><em>递归方式</em></h1><h2 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;<span class="comment">//递归写法</span></span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    res.add(root.val);</span><br><span class="line">    postorderTraversal(root.left);</span><br><span class="line">    postorderTraversal(root.right);    </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <hr>
+
+<h1 id="递归方式"><a href="#递归方式" class="headerlink" title="递归方式"></a><em>递归方式</em></h1><h2 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;<span class="comment">//递归写法</span></span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    res.add(root.val);</span><br><span class="line">    postorderTraversal(root.left);</span><br><span class="line">    postorderTraversal(root.right);    </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;<span class="comment">//递归写法</span></span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    postorderTraversal(root.left);</span><br><span class="line">    res.add(root.val);</span><br><span class="line">    postorderTraversal(root.right);    </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;<span class="comment">//递归写法</span></span><br><span class="line">    <span class="keyword">if</span>(root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    postorderTraversal(root.left);    </span><br><span class="line">    postorderTraversal(root.right); </span><br><span class="line">    res.add(root.val);   </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -449,6 +451,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
               </li>
              
               <li class="article-tag-list-item">

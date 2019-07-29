@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>springboot+shiro+react前后端分离跨域接收token | lzcge的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题背景  背景：        springboot+react+shiro进行前后端分离时进行跨域登录保持session会话时，解决了session会话后后台无法接收到token。问题：         在正式发送Headers 信息之前浏览器会去向 Server 端发送一个 OPTIONS 请求，         看 Server 返回的“Access-Control-Allow-Heade">
+  <meta name="description" content="问题背景  背景：        springboot+react+shiro进行前后端分离时进行跨域登录保持session会话时，解决了session会话后后台无法接收到token。问题：         在正式发送Headers 信息之前浏览器会去向 Server 端发送一个 OPTIONS 请求，         看 Server 返回的“Access-Control-Allow-Hea">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springboot+shiro+react前后端分离跨域接收token">
 <meta property="og:url" content="http://yoursite.com/2019/03/02/springboot+shiro+react前后端分离跨域接收token /index.html">
 <meta property="og:site_name" content="lzcge的博客">
-<meta property="og:description" content="问题背景  背景：        springboot+react+shiro进行前后端分离时进行跨域登录保持session会话时，解决了session会话后后台无法接收到token。问题：         在正式发送Headers 信息之前浏览器会去向 Server 端发送一个 OPTIONS 请求，         看 Server 返回的“Access-Control-Allow-Heade">
+<meta property="og:description" content="问题背景  背景：        springboot+react+shiro进行前后端分离时进行跨域登录保持session会话时，解决了session会话后后台无法接收到token。问题：         在正式发送Headers 信息之前浏览器会去向 Server 端发送一个 OPTIONS 请求，         看 Server 返回的“Access-Control-Allow-Hea">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T11:34:24.152Z">
+<meta property="og:updated_time" content="2019-07-29T01:37:47.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot+shiro+react前后端分离跨域接收token">
-<meta name="twitter:description" content="问题背景  背景：        springboot+react+shiro进行前后端分离时进行跨域登录保持session会话时，解决了session会话后后台无法接收到token。问题：         在正式发送Headers 信息之前浏览器会去向 Server 端发送一个 OPTIONS 请求，         看 Server 返回的“Access-Control-Allow-Heade">
+<meta name="twitter:description" content="问题背景  背景：        springboot+react+shiro进行前后端分离时进行跨域登录保持session会话时，解决了session会话后后台无法接收到token。问题：         在正式发送Headers 信息之前浏览器会去向 Server 端发送一个 OPTIONS 请求，         看 Server 返回的“Access-Control-Allow-Hea">
   
     <link rel="alternative" href="/atom.xml" title="lzcge的博客" type="application/atom+xml">
   
@@ -179,7 +179,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>问题背景</strong></p>
+        <hr>
+
+<p><strong>问题背景</strong></p>
 <blockquote>
 <p>背景：<br>        springboot+react+shiro进行前后端分离时进行跨域登录保持session会话时，解决了session会话后后台无法接收到token。<br>问题：         在正式发送Headers 信息之前浏览器会去向 Server 端发送一个 OPTIONS 请求，         看 Server 返回的<br>“Access-Control-Allow-Headers” 是否有自定义的 header<br>        字段。原来CROS复杂请求时会先发送一个OPTIONS请求，来测试服务器是否支<br>        持本次请求，这个请求时不带数据的，请求成功后才会发送真实的请求。所以前<br>        面那个只发送key的问题是要确认服务器支不支持接收这个headers。</p>
 </blockquote>
@@ -468,6 +470,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
               </li>
              
               <li class="article-tag-list-item">

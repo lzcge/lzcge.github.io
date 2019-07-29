@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>HashMap实现原理 | lzcge的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HashMap概述  HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。   HashMap的数据结构   HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。在jdk1.8后引入了红黑树。 HashMap里面实现一个静态内部类Entry，其重要的属性有 k">
+  <meta name="description" content="HashMap概述  HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。   HashMap的数据结构   HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。在jdk1.8后引入了红黑树。 HashMap里面实现一个静态内部类Entry，其重要的属性有">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HashMap实现原理">
 <meta property="og:url" content="http://yoursite.com/2019/05/07/HashMap实现原理/index.html">
 <meta property="og:site_name" content="lzcge的博客">
-<meta property="og:description" content="HashMap概述  HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。   HashMap的数据结构   HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。在jdk1.8后引入了红黑树。 HashMap里面实现一个静态内部类Entry，其重要的属性有 k">
+<meta property="og:description" content="HashMap概述  HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。   HashMap的数据结构   HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。在jdk1.8后引入了红黑树。 HashMap里面实现一个静态内部类Entry，其重要的属性有">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190507183248725.png">
-<meta property="og:updated_time" content="2019-05-07T10:59:31.740Z">
+<meta property="og:updated_time" content="2019-07-29T01:37:11.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HashMap实现原理">
-<meta name="twitter:description" content="HashMap概述  HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。   HashMap的数据结构   HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。在jdk1.8后引入了红黑树。 HashMap里面实现一个静态内部类Entry，其重要的属性有 k">
+<meta name="twitter:description" content="HashMap概述  HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。   HashMap的数据结构   HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。在jdk1.8后引入了红黑树。 HashMap里面实现一个静态内部类Entry，其重要的属性有">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190507183248725.png">
   
     <link rel="alternative" href="/atom.xml" title="lzcge的博客" type="application/atom+xml">
@@ -181,7 +181,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  HashMap概述</p>
+        <hr>
+
+<p>  HashMap概述</p>
 <blockquote>
 <p>HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。</p>
 </blockquote>
@@ -467,6 +469,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">后端</a>
               </li>
              
               <li class="article-tag-list-item">
