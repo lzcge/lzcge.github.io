@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/4 | lzcge的博客</title>
+  <title>阿里云实现短信验证码登录 | lzcge的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="lzcge的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/04/index.html">
+  <meta name="description" content="1、基本的准备工作：  大致的流程为：注册阿里账号、充值、完成短信签名和短信模板的申请（需要等一段时间审核通过）、创建access key   a）注册阿里账号、充值就不说了（注意的是自己玩的话认证的时候就选择个人用户）b）完成短信签名和短信模板的申请 短信签名：就相当于平时我们看到的短信前面公司的名称一样短信模板：就是收到的短信的具体内容的样式">
+<meta name="keywords" content="java,后端,短信验证码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里云实现短信验证码登录">
+<meta property="og:url" content="http://yoursite.com/2019/08/07/阿里云实现短信验证码登录/index.html">
 <meta property="og:site_name" content="lzcge的博客">
+<meta property="og:description" content="1、基本的准备工作：  大致的流程为：注册阿里账号、充值、完成短信签名和短信模板的申请（需要等一段时间审核通过）、创建access key   a）注册阿里账号、充值就不说了（注意的是自己玩的话认证的时候就选择个人用户）b）完成短信签名和短信模板的申请 短信签名：就相当于平时我们看到的短信前面公司的名称一样短信模板：就是收到的短信的具体内容的样式">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190807015845176.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzQwNTUzODM3,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190807020113305.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzQwNTUzODM3,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190807020402850.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzQwNTUzODM3,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190807020815636.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzQwNTUzODM3,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-08-06T18:53:03.170Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lzcge的博客">
+<meta name="twitter:title" content="阿里云实现短信验证码登录">
+<meta name="twitter:description" content="1、基本的准备工作：  大致的流程为：注册阿里账号、充值、完成短信签名和短信模板的申请（需要等一段时间审核通过）、创建access key   a）注册阿里账号、充值就不说了（注意的是自己玩的话认证的时候就选择个人用户）b）完成短信签名和短信模板的申请 短信签名：就相当于平时我们看到的短信前面公司的名称一样短信模板：就是收到的短信的具体内容的样式">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190807015845176.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzQwNTUzODM3,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="lzcge的博客" type="application/atom+xml">
   
@@ -154,74 +164,88 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-阿里云实现短信验证码登录" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/17/linux常用命令/" class="archive-article-date">
-  	<time datetime="2019-04-17T05:34:22.947Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-17</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/17/linux常用命令/">Linux 常用命令</a>
+    <h1 class="article-title" itemprop="name">
+      阿里云实现短信验证码登录
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/04/Java 多态/" class="archive-article-date">
-  	<time datetime="2019-04-04T07:37:57.275Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-04</time>
+        
+        <a href="/2019/08/07/阿里云实现短信验证码登录/" class="archive-article-date">
+  	<time datetime="2019-08-06T18:50:57.876Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/04/Java 多态/">Java 多态</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
 
-        <div class="article-info info-on-right">
-          
+
+<h4 id="1、基本的准备工作："><a href="#1、基本的准备工作：" class="headerlink" title="1、基本的准备工作："></a>1、基本的准备工作：</h4><blockquote>
+<ul>
+<li>大致的流程为：<br>注册阿里账号、充值、完成短信签名和短信模板的申请（需要等一段时间审核通过）、创建access key</li>
+</ul>
+</blockquote>
+<h6 id="a）注册阿里账号、充值就不说了（注意的是自己玩的话认证的时候就选择个人用户）"><a href="#a）注册阿里账号、充值就不说了（注意的是自己玩的话认证的时候就选择个人用户）" class="headerlink" title="a）注册阿里账号、充值就不说了（注意的是自己玩的话认证的时候就选择个人用户）"></a>a）注册阿里账号、充值就不说了（<font color="red">注意的是自己玩的话认证的时候就选择个人用户</font>）</h6><h6 id="b）完成短信签名和短信模板的申请"><a href="#b）完成短信签名和短信模板的申请" class="headerlink" title="b）完成短信签名和短信模板的申请"></a>b）完成短信签名和短信模板的申请</h6><blockquote>
+<p>短信签名：就相当于平时我们看到的短信前面公司的名称一样<br>短信模板：就是收到的短信的具体内容的样式</p>
+</blockquote>
+<a id="more"></a>
+<p><strong>短信签名：</strong><br><img src="https://img-blog.csdnimg.cn/20190807015845176.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzQwNTUzODM3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><strong>短信模板选择：</strong><img src="https://img-blog.csdnimg.cn/20190807020113305.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzQwNTUzODM3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h6 id="c）创建access-key"><a href="#c）创建access-key" class="headerlink" title="c）创建access key"></a>c）创建access key</h6><p><img src="https://img-blog.csdnimg.cn/20190807020402850.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzQwNTUzODM3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20190807020815636.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzQwNTUzODM3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><strong>基本准备工作完成了，下面就开始写代码啦！</strong></p>
+<h4 id="2、代码："><a href="#2、代码：" class="headerlink" title="2、代码："></a>2、代码：</h4><p>首先需要添加需要的SDK的jar包，我采用的是添加依赖的方式<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.aliyun&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;aliyun-java-sdk-core&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.1.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.aliyun&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;aliyun-java-sdk-dysmsapi&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.1.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
+<p><br></p>
+<p>前台页面（<font color="red">由于本人这个页面代码有点多，就只贴了跟验证码有关的几个参数</font>）<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group has-success has-feedback"</span>&gt;</span><br><span class="line">          &lt;input type=<span class="string">"text"</span> value=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control"</span> id=<span class="string">"fphoneNumber"</span> name=<span class="string">"phoneNumber"</span> placeholder=<span class="string">"请输入手机号"</span> style=<span class="string">"margin-top:10px;"</span>&gt;</span><br><span class="line">          &lt;span class="glyphicon glyphicon-phone-alt form-control-feedback "&gt;&lt;/span&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">          &lt;input type=<span class="string">"text"</span> id=<span class="string">"fverifyCode"</span> value=<span class="string">""</span> placeholder=<span class="string">"请输入验证码"</span> name=<span class="string">"verifyCode"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control form-login-verifyCode"</span>&gt;</span><br><span class="line">          &lt;button type="button" class="form-login-verifyCode-button"  onclick="getVerifyCode()"&gt;获取&lt;/button&gt;</span><br><span class="line">          &lt;br&gt;&lt;br&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;a class="btn btn-lg btn-success btn-block" onclick="dologin()" &gt; 登录&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>
+<p><br><br></p>
+<p><strong>前台js</strong><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    *点击获取验证码按钮后将手机号传到后台获取验证码</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="function">function <span class="title">getVerifyCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">var</span> phoneNumber = $(<span class="string">"#fphoneNumber"</span>);</span><br><span class="line">       <span class="keyword">if</span>($.trim(phoneNumber.val())==<span class="string">""</span>)&#123;</span><br><span class="line">           alert(<span class="string">"电话不能为空"</span>);</span><br><span class="line">           fphoneNumber.val(<span class="string">""</span>);</span><br><span class="line">           fphoneNumber.focus();</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">           $.ajax(&#123;</span><br><span class="line">               url: <span class="string">"$&#123;APP_PATH&#125;/sendSms.do"</span>,</span><br><span class="line">               async : <span class="keyword">true</span>,</span><br><span class="line">               type: <span class="string">"POST"</span>,</span><br><span class="line">               dataType: <span class="string">"json"</span>,</span><br><span class="line">               data: &#123;<span class="string">"phoneNumber"</span>:phoneNumber.val()&#125;,</span><br><span class="line">               success: function (data) &#123;</span><br><span class="line">                   <span class="keyword">if</span>(data == <span class="string">'fail'</span>)&#123;</span><br><span class="line">                       alert(<span class="string">"发送验证码失败"</span>);</span><br><span class="line">                       <span class="keyword">return</span> ;</span><br><span class="line">                   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                       alert(<span class="string">"验证码发送成功"</span>)</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;);</span><br><span class="line">       &#125;</span><br><span class="line">      </span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*输入验证码后提交到后台是否输入合法</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function">function <span class="title">dologin</span><span class="params">()</span> </span>&#123;    </span><br><span class="line">      </span><br><span class="line">       <span class="keyword">var</span> fverifyCode = $(<span class="string">"#fverifyCode"</span>);</span><br><span class="line">       <span class="keyword">if</span>($.trim(fverifyCode.val())==<span class="string">""</span>)&#123;</span><br><span class="line">           alert(<span class="string">"验证码不能为空"</span>);</span><br><span class="line">           fverifyCode.val(<span class="string">""</span>);</span><br><span class="line">           fverifyCode.focus();</span><br><span class="line">       &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">           <span class="keyword">var</span> data=&#123;            	              </span><br><span class="line">               <span class="string">"verifyCode"</span>:fverifyCode.val()</span><br><span class="line">           &#125;;</span><br><span class="line">           $.ajax(&#123;</span><br><span class="line">               type: <span class="string">"POST"</span>,</span><br><span class="line">               url: <span class="string">"$&#123;APP_PATH&#125;/doLogin.do"</span>,</span><br><span class="line">               contentType: <span class="string">"application/json"</span>,</span><br><span class="line">               dataType: <span class="string">"JSON"</span>,</span><br><span class="line">               data: JSON.stringify(data),</span><br><span class="line">               success: function (obj) &#123;</span><br><span class="line">                   console.log(obj);</span><br><span class="line">                   <span class="keyword">if</span>(obj.data==<span class="string">'登录成功'</span>)&#123;</span><br><span class="line">                       window.location.href=<span class="string">"$&#123;APP_PATH&#125;/main.htm"</span>;</span><br><span class="line">                   &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                       alert(obj.data);</span><br><span class="line">                       fverifyCode.val(<span class="string">""</span>);</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;,</span><br><span class="line">               error: function () &#123;</span><br><span class="line">                   layer.msg(<span class="string">"登录失败!"</span>, &#123;time:<span class="number">1000</span>, icon:<span class="number">5</span>, shift:<span class="number">6</span>&#125;);</span><br><span class="line">               &#125;</span><br><span class="line"></span><br><span class="line">           &#125;)</span><br><span class="line"></span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>后台</strong></p>
+<font color="red">打了<em>**</em>的地方是你需要自己填写的参数（具体值去上面配的阿里短信服务里面找）</font>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 发送短信验证码</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> 手机号</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@PostMapping</span>(<span class="string">"/sendSms"</span>)</span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">sendSms</span><span class="params">(HttpServletRequest httpServletRequest, String phoneNumber)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="comment">//生成6位验证码</span></span><br><span class="line">			String verifyCode = String.valueOf(<span class="keyword">new</span> Random().nextInt(<span class="number">899999</span>) + <span class="number">100000</span>);</span><br><span class="line">			<span class="comment">//设置超时时间(不必修改)</span></span><br><span class="line">			System.setProperty(<span class="string">"sun.net.client.defaultConnectTimeout"</span>, <span class="string">"10000"</span>);</span><br><span class="line">			<span class="comment">//(不必修改)</span></span><br><span class="line">			System.setProperty(<span class="string">"sun.net.client.defaultReadTimeout"</span>, <span class="string">"10000"</span>);</span><br><span class="line">			<span class="comment">//初始化ascClient，("***"分别填写自己的AccessKey ID和Secret)</span></span><br><span class="line">			IClientProfile profile = DefaultProfile.getProfile(<span class="string">"cn-hangzhou"</span>, <span class="string">"*****"</span>, <span class="string">"****"</span>);</span><br><span class="line">			<span class="comment">//(不必修改)</span></span><br><span class="line">			DefaultProfile.addEndpoint(<span class="string">"cn-hangzhou"</span>, <span class="string">"cn-hangzhou"</span>, <span class="string">"Dysmsapi"</span>, <span class="string">"dysmsapi.aliyuncs.com"</span>);</span><br><span class="line">			<span class="comment">//(不必修改)</span></span><br><span class="line">			IAcsClient acsClient = <span class="keyword">new</span> DefaultAcsClient(profile);</span><br><span class="line">			<span class="comment">//组装请求对象(不必修改)</span></span><br><span class="line">			SendSmsRequest request = <span class="keyword">new</span> SendSmsRequest();</span><br><span class="line">			<span class="comment">//****处填写接收方的手机号码</span></span><br><span class="line">			request.setPhoneNumbers(phoneNumber);</span><br><span class="line">			<span class="comment">//****填写已申请的短信签名</span></span><br><span class="line">			request.setSignName(<span class="string">"****"</span>);</span><br><span class="line">			<span class="comment">//****填写获得的短信模版CODE</span></span><br><span class="line">			request.setTemplateCode(<span class="string">"*****"</span>);</span><br><span class="line">			<span class="comment">//笔者的短信模版中有$&#123;code&#125;, 因此此处对应填写验证码</span></span><br><span class="line">			request.setTemplateParam(<span class="string">"&#123;\"code\":\""</span>+verifyCode+<span class="string">"\"&#125;"</span>);</span><br><span class="line">			<span class="comment">//不必修改</span></span><br><span class="line">			SendSmsResponse sendSmsResponse = acsClient.getAcsResponse(request);</span><br><span class="line"></span><br><span class="line">			<span class="comment">//将生成的验证码和创建时间放到session中，后面验证从session中取</span></span><br><span class="line">			HttpSession session = httpServletRequest.getSession();</span><br><span class="line">			session.setAttribute(<span class="string">"verifyCode"</span>,verifyCode);</span><br><span class="line">			session.setAttribute(<span class="string">"verifyCodeCreateTime"</span>,System.currentTimeMillis());</span><br><span class="line"><span class="comment">//			return sendSmsResponse;</span></span><br><span class="line">			<span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line"></span><br><span class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">			<span class="keyword">return</span> <span class="string">"fail"</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//JsonResult 是我自己定义的一个返回结果的包装类，可以直接用map等代替</span></span><br><span class="line"><span class="comment">//loginUserVo里面是有一些其它的验证信息，如果没有的话就直接去掉就好了，然后把下面的User resultUser = userService.login(loginUserVo.getUser());注释掉</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 验证</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span></span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span></span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="meta">@RequestMapping</span>(value = <span class="string">"/doLogin"</span>,method = RequestMethod.POST,consumes = <span class="string">"application/json"</span>)</span><br><span class="line">	<span class="meta">@ResponseBody</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Object <span class="title">doLogin</span><span class="params">(@RequestBody LoginUserVo loginUserVo,HttpSession session)</span></span>&#123;</span><br><span class="line">		JsonResult jsonResult = <span class="keyword">new</span> JsonResult();</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">if</span>(session.getAttribute(<span class="string">"verifyCodeCreateTime"</span>) !=<span class="keyword">null</span> &amp;&amp; (System.currentTimeMillis()-Long.valueOf(String.valueOf(session.getAttribute(<span class="string">"verifyCodeCreateTime"</span>))) )&gt; <span class="number">1000</span> * <span class="number">60</span>  )&#123;</span><br><span class="line">				session.removeAttribute(<span class="string">"verifyCode"</span>);</span><br><span class="line">				session.removeAttribute(<span class="string">"verifyCodeCreateTime"</span>);</span><br><span class="line">				jsonResult.setData(<span class="string">"验证码过期"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (session.getAttribute(<span class="string">"verifyCode"</span>) != <span class="keyword">null</span> &amp;&amp;</span><br><span class="line">					loginUserVo.getVerifyCode().equals(session.getAttribute(<span class="string">"verifyCode"</span>)))&#123;</span><br><span class="line">				User resultUser = userService.login(loginUserVo.getUser());</span><br><span class="line">				session.setAttribute(Const.LOGIN_USER,resultUser);</span><br><span class="line">				session.removeAttribute(<span class="string">"verifyCode"</span>);</span><br><span class="line">				session.removeAttribute(<span class="string">"verifyCodeCreateTime"</span>);</span><br><span class="line">				jsonResult.setData(<span class="string">"登录成功"</span>);</span><br><span class="line">			&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">				jsonResult.setData(<span class="string">"验证码错误"</span>);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">			jsonResult.setData(<span class="string">"登录失败"</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> jsonResult;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<p><strong>初学者自己搞着玩的，如果有什么不对的欢迎指正哈。</strong></p>
+<p>参考文章：<br><a href="https://blog.csdn.net/zuoliangzhu/article/details/81193269" target="_blank" rel="noopener">https://blog.csdn.net/zuoliangzhu/article/details/81193269</a></p>
+<p><a href="https://blog.csdn.net/u011958281/article/details/78614792" target="_blank" rel="noopener">https://blog.csdn.net/u011958281/article/details/78614792</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢打赏<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/zhifu.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -229,23 +253,131 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">短信验证码</a>
+        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/07/阿里云实现短信验证码登录/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/07/29/前端传递时间映射到后端的Date类型问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端传递时间映射到后端的Date类型问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、基本的准备工作："><span class="toc-number">1.</span> <span class="toc-text">1、基本的准备工作：</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#a）注册阿里账号、充值就不说了（注意的是自己玩的话认证的时候就选择个人用户）"><span class="toc-number">1.0.1.</span> <span class="toc-text">a）注册阿里账号、充值就不说了（注意的是自己玩的话认证的时候就选择个人用户）</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#b）完成短信签名和短信模板的申请"><span class="toc-number">1.0.2.</span> <span class="toc-text">b）完成短信签名和短信模板的申请</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#c）创建access-key"><span class="toc-number">1.0.3.</span> <span class="toc-text">c）创建access key</span></a></li></ol></li></ol><li class="toc-item toc-level-4"><a class="toc-link" href="#2、代码："><span class="toc-number">2.</span> <span class="toc-text">2、代码：</span></a></li>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -268,8 +400,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
