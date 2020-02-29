@@ -6,22 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>HashMap实现原理 | lzcge的博客</title>
+  <title>Archives: 2020/2 | lzcge的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HashMap概述  HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。   HashMap的数据结构   HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。在jdk1.8后引入了红黑树。 HashMap里面实现一个静态内部类Entry，其重要的属性有">
-<meta name="keywords" content="java">
-<meta property="og:type" content="article">
-<meta property="og:title" content="HashMap实现原理">
-<meta property="og:url" content="http://yoursite.com/2019/05/07/HashMap实现原理/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="lzcge的博客">
+<meta property="og:url" content="http://yoursite.com/archives/2020/02/index.html">
 <meta property="og:site_name" content="lzcge的博客">
-<meta property="og:description" content="HashMap概述  HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。   HashMap的数据结构   HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。在jdk1.8后引入了红黑树。 HashMap里面实现一个静态内部类Entry，其重要的属性有">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20190507183248725.png">
-<meta property="og:updated_time" content="2019-07-29T01:37:11.336Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HashMap实现原理">
-<meta name="twitter:description" content="HashMap概述  HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。   HashMap的数据结构   HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。在jdk1.8后引入了红黑树。 HashMap里面实现一个静态内部类Entry，其重要的属性有">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190507183248725.png">
+<meta name="twitter:title" content="lzcge的博客">
   
     <link rel="alternative" href="/atom.xml" title="lzcge的博客" type="application/atom+xml">
   
@@ -161,221 +154,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HashMap实现原理" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      HashMap实现原理
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/02/29/win10系统AMD显卡OBS录屏黑屏解决方法/" class="archive-article-date">
+  	<time datetime="2020-02-29T06:41:52.732Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-29</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/02/29/win10系统AMD显卡OBS录屏黑屏解决方法/">win10系统AMD显卡OBS录屏黑屏解决方法</a>
     </h1>
   
 
-        
-        <a href="/2019/05/07/HashMap实现原理/" class="archive-article-date">
-  	<time datetime="2019-05-07T10:54:14.052Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-
-<p>  HashMap概述</p>
-<blockquote>
-<p>HashMap是基于哈希表的Map接口的非同步实现。此实现提供所有可选的映射操作，并允许使用null值和null键。此类不保证映射的顺序，特别是它不保证该顺序恒久不变。</p>
-</blockquote>
-<ol start="2">
-<li>HashMap的数据结构</li>
-</ol>
-<blockquote>
-<p>HashMap实际上是一个“链表散列”的数据结构，即数组和链表的结合体。在jdk1.8后引入了红黑树。<br><img src="https://img-blog.csdnimg.cn/20190507183248725.png" alt="在这里插入图片描述"></p>
-<p>HashMap里面实现一个静态内部类Entry，其重要的属性有 key , value,<br>next，从属性key,value我们就能很明显的看出来Entry就是HashMap键值对实现的一个基础bean，我们上面说到HashMap的基础就是一个线性数组，这个数组就是Entry[]，Map里面的内容都保存在Entry[]里面。</p>
-</blockquote>
-<a id="more"></a>
-<p>  重要参数</p>
-<p><strong>loadFactor : 负载因子 默认0.75<br>initialCapacity : 初始化容量16，最大是（1 &lt;&lt; 30）1073741824<br>table : Entry&lt;K,V&gt;[] table 是用来存储数据的数组<br>Entry&lt;K,V&gt; 是HashMap的一个内部类，链表结构</strong></p>
-<p> HashMap的扩容</p>
-<blockquote>
-<p>当hashmap中的元素越来越多的时候发生hash冲突的几率就越来越高，这时就要对其进行扩容，什么时候扩容呢？当容量达到了当前总容量乘上loadFactor的数量时就要对其扩容，在hashmap中一次是扩容两倍。</p>
-</blockquote>
-<p>  红黑树的引入</p>
-<blockquote>
-<p>在jdk1.8中引入了红黑树，当一个索引下的链表长度达到8时，就会将这个链表转换为红黑树。这样大大提高了hashmap的性能，以及减少了hash冲突。</p>
-</blockquote>
-<p> 存元素</p>
-<blockquote>
-<p>当我们往HashMap中put元素的时候，先根据key的hashCode重新计算hash值，根据hash值得到这个元素在数组中的位置（即下标），如果数组该位置上已经存放有其他元素了，那么就根据equels比较key是否相等，如果相等替换为新的value值。否则在这个位置上的元素将以链表的形式存放，新加入的放在链头，最先加入的放在链尾。如果数组该位置上没有元素，就直接将该元素放到此数组中的该位置上。</p>
-</blockquote>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢打赏<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/zhifu.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">其它</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/07/HashMap实现原理/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/05/09/ssm框架搭建详细教程IDEA/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          ssm框架搭建详细教程IDEA
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/04/17/linux常用命令/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Linux 常用命令</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    目录，不存在的…
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -398,8 +230,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
