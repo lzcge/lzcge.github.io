@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | lzcge的个人博客</title>
+  <title>java字符串拼接方式和区别 | lzcge的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="lzcge的个人博客">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="1、拼接方式 常见拼接方式有以下四种：（1）使用符号‘+’拼接（2）String类中的concat方法拼接（3）使用StringBuffer拼接（4）使用StringBuilder拼接（5）StringUtils.join  2、使用选择  如果只是简单的字符串拼接，不是在循环体中进行字符串拼接的话，直接使用+就好了 如果是在 for 循环中进行字符串拼接，考虑使用StringBuilder">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java字符串拼接方式和区别">
+<meta property="og:url" content="http://example.com/2022/02/12/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E6%96%B9%E5%BC%8F%E5%92%8C%E5%8C%BA%E5%88%AB/index.html">
 <meta property="og:site_name" content="lzcge的个人博客">
+<meta property="og:description" content="1、拼接方式 常见拼接方式有以下四种：（1）使用符号‘+’拼接（2）String类中的concat方法拼接（3）使用StringBuffer拼接（4）使用StringBuilder拼接（5）StringUtils.join  2、使用选择  如果只是简单的字符串拼接，不是在循环体中进行字符串拼接的话，直接使用+就好了 如果是在 for 循环中进行字符串拼接，考虑使用StringBuilder">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-12T09:46:10.548Z">
+<meta property="article:modified_time" content="2022-02-12T09:51:02.543Z">
 <meta property="article:author" content="南宫云珠">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="lzcge的个人博客" type="application/atom+xml">
@@ -156,36 +161,102 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-java字符串拼接方式和区别" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      java字符串拼接方式和区别
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/12/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E6%96%B9%E5%BC%8F%E5%92%8C%E5%8C%BA%E5%88%AB/" class="archive-article-date">
+
+        
+        <a href="/2022/02/12/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E6%96%B9%E5%BC%8F%E5%92%8C%E5%8C%BA%E5%88%AB/" class="archive-article-date">
   	<time datetime="2022-02-12T09:46:10.548Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-12</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/12/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E6%96%B9%E5%BC%8F%E5%92%8C%E5%8C%BA%E5%88%AB/">java字符串拼接方式和区别</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr/>
 
-        <div class="article-info info-on-right">
-          
+
+<h4 id="1、拼接方式"><a href="#1、拼接方式" class="headerlink" title="1、拼接方式"></a><strong>1、拼接方式</strong></h4><blockquote>
+<p>常见拼接方式有以下四种：<br>（1）<strong>使用符号‘+’拼接</strong><br>（2）<strong>String类中的concat方法拼接</strong><br>（3）<strong>使用StringBuffer拼接</strong><br>（4）<strong>使用StringBuilder拼接</strong><br>（5）<strong>StringUtils.join</strong></p>
+</blockquote>
+<h4 id="2、使用选择"><a href="#2、使用选择" class="headerlink" title="2、使用选择"></a><strong>2、使用选择</strong></h4><blockquote>
+<ul>
+<li>如果只是简单的字符串拼接，不是在循环体中进行字符串拼接的话，直接使用+就好了</li>
+<li>如果是在 for 循环中进行字符串拼接，考虑使用StringBuilder和StringBuffer</li>
+<li>如果在并发场景中进行字符串拼接的话，要使用StringBuffer来代替StringBuilder</li>
+<li>如果是通过一个List进行字符串拼接，则考虑使用StringUtils.join和StringJoiner</li>
+</ul>
+</blockquote>
+<span id="more"></span>
+
+<h4 id="3、详情区别"><a href="#3、详情区别" class="headerlink" title="3、详情区别"></a><strong>3、详情区别</strong></h4><h5 id="3-1-‘-’拼接"><a href="#3-1-‘-’拼接" class="headerlink" title="3.1  ‘+’拼接"></a><strong>3.1  ‘+’拼接</strong></h5><p><strong>原理：</strong><br>使用+拼接字符串，其实只是Java提供的一个语法糖，其实现原理是StringBuilder.append</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用符号‘+’拼接字符串</span></span><br><span class="line">String hollis = wechat + <span class="string">&quot;,&quot;</span> + introduce;</span><br><span class="line"><span class="comment">// 上面代码的反编译结果</span></span><br><span class="line">String hollis = (<span class="keyword">new</span> StringBuilder()).append(wechat).append(<span class="string">&quot;,&quot;</span>).append(introduce).toString();</span><br></pre></td></tr></table></figure>
+<p>从反编译后的代码，使用+拼接字符串每次都是new了一个StringBuilder，然后再把String转成StringBuilder，再进行append。<br><strong>注意：</strong><br>如果在for循环中使用+拼接字符串，会频繁的new一个对象，不仅仅会耗费时间，还会造成内存资源的浪费。<br>根据阿里巴巴Java开发手册建议：循环体内，字符串的连接方式，使用 StringBuilder 的 append 方法进行扩展，而不要使用+。</p>
+<h5 id="3-2-String类中的concat方法"><a href="#3-2-String类中的concat方法" class="headerlink" title="3.2  String类中的concat方法"></a><strong>3.2  String类中的concat方法</strong></h5><p><strong>用法：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String hollis = <span class="string">&quot;wechat&quot;</span>.concat(<span class="string">&quot;,&quot;</span>).concat(<span class="string">&quot;introduce&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>原理：</strong> </p>
+<blockquote>
+<ul>
+<li>concat方法首先创建了一个字符数组，长度是已有字符串和待拼接字符串的长度之和，再把两个字符串的值复制到新的字符数组中，并使用这个字符数组创建一个新的 String 对象并返回。</li>
+<li>经过 concat 方法，其实是new了一个新的 String，这也就呼应到前面我们说的字符串的不变性问题上了。</li>
+</ul>
+</blockquote>
+<h5 id="3-3-StringBuffer和StringBuilder"><a href="#3-3-StringBuffer和StringBuilder" class="headerlink" title="3.3  StringBuffer和StringBuilder"></a><strong>3.3  StringBuffer和StringBuilder</strong></h5><p><strong>原理：</strong></p>
+<blockquote>
+<ul>
+<li>StringBuffer和StringBuilder都继承了AbstractStringBuilder类，在AbstractStringBuilder类中定义了一个字符数组 char[] value ，<font color=red>与String类中不同的是，它没有final修饰符，所以是可以被修改的</font></li>
+</ul>
+</blockquote>
+<p><strong>区别：</strong></p>
+<blockquote>
+<p><font color=red>StringBuffer 和 StringBuilder 最大的区别就是 StringBuffer是线程安全的</font>，StringBuffer使用synchronized进行声明，重写了AbstractStringBuilder类中的部分方法，这也导致了StringBuffer时间效率没有StringBuilder高</p>
+</blockquote>
+<h5 id="3-4-StringUtils-join"><a href="#3-4-StringUtils-join" class="headerlink" title="3.4  StringUtils.join"></a><strong>3.4  StringUtils.join</strong></h5><p><strong>原理：</strong></p>
+<blockquote>
+<p>StringUtils.join是通过StringBuffer实现的，其最主要的功能是 将数组或集合以某拼接符拼接到一起形成新的字符串。</p>
+</blockquote>
+<h5 id="3-5-StringJoiner"><a href="#3-5-StringJoiner" class="headerlink" title="3.5  StringJoiner"></a><strong>3.5  StringJoiner</strong></h5><p><strong>原理：</strong></p>
+<blockquote>
+<p>StringJoiner 是 java.util包中的一个类，用于构造一个由分隔符分隔的字符序列（可选），并且可以从提供的前缀开始并以提供的后缀结尾。其实现原理也是依赖的StringBuilder类</p>
+</blockquote>
+<p><strong>原创文章：</strong><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000041373492">https://segmentfault.com/a/1190000041373492</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,384 +268,119 @@
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/08/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E5%88%A4%E6%96%AD%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E4%B8%BA%E5%90%88%E6%B3%95IP%E5%9C%B0%E5%9D%80/" class="archive-article-date">
-  	<time datetime="2022-02-07T16:22:04.835Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/08/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E5%88%A4%E6%96%AD%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E4%B8%BA%E5%90%88%E6%B3%95IP%E5%9C%B0%E5%9D%80/">【算法】判断输入字符串是否为合法IP地址的Java实现</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/08/java%E5%AE%9E%E7%8E%B0%E5%8E%BB%E9%99%A4%E6%8B%AC%E5%8F%B7%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9/" class="archive-article-date">
-  	<time datetime="2022-02-07T16:13:48.287Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/08/java%E5%AE%9E%E7%8E%B0%E5%8E%BB%E9%99%A4%E6%8B%AC%E5%8F%B7%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9/">java实现去除括号中的内容</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">脚本</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/11/14/%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B%E5%92%8C%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2021-11-14T15:02:51.864Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/11/14/%E7%80%91%E5%B8%83%E6%A8%A1%E5%9E%8B%E5%92%8C%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E6%A8%A1%E5%9E%8B/">瀑布模型和敏捷开发模型</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">软件测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/12/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E6%96%B9%E5%BC%8F%E5%92%8C%E5%8C%BA%E5%88%AB/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/08/08/Python%E7%9F%A5%E8%AF%86%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2021-08-08T03:03:47.404Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-08</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/02/08/%E3%80%90%E7%AE%97%E6%B3%95%E3%80%91%E5%88%A4%E6%96%AD%E8%BE%93%E5%85%A5%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E4%B8%BA%E5%90%88%E6%B3%95IP%E5%9C%B0%E5%9D%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">【算法】判断输入字符串是否为合法IP地址的Java实现</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/08/08/Python%E7%9F%A5%E8%AF%86%E7%82%B9/">Python知识点</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">python基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E6%8B%BC%E6%8E%A5%E6%96%B9%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">1、拼接方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E4%BD%BF%E7%94%A8%E9%80%89%E6%8B%A9"><span class="toc-number">2.</span> <span class="toc-text">2、使用选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E8%AF%A6%E6%83%85%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">3、详情区别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-%E2%80%98-%E2%80%99%E6%8B%BC%E6%8E%A5"><span class="toc-number">3.1.</span> <span class="toc-text">3.1  ‘+’拼接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-String%E7%B1%BB%E4%B8%AD%E7%9A%84concat%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.</span> <span class="toc-text">3.2  String类中的concat方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-StringBuffer%E5%92%8CStringBuilder"><span class="toc-number">3.3.</span> <span class="toc-text">3.3  StringBuffer和StringBuilder</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-4-StringUtils-join"><span class="toc-number">3.4.</span> <span class="toc-text">3.4  StringUtils.join</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-5-StringJoiner"><span class="toc-number">3.5.</span> <span class="toc-text">3.5  StringJoiner</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/25/xshell%E8%BF%9E%E6%8E%A5VMware+centos7%E4%B8%8E%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8Aconnection%20refused%20%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2021-07-25T12:02:30.509Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-25</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/25/xshell%E8%BF%9E%E6%8E%A5VMware+centos7%E4%B8%8E%E8%81%94%E7%BD%91%E9%85%8D%E7%BD%AE%E4%BB%A5%E5%8F%8Aconnection%20refused%20%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/">xshell连接VMware+centos7与联网配置</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">xshell</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">VMware</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/25/ssm%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8BIDEA/" class="archive-article-date">
-  	<time datetime="2021-07-25T11:55:48.386Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/25/ssm%E6%A1%86%E6%9E%B6%E6%90%AD%E5%BB%BA%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8BIDEA/">ssm框架搭建详细教程IDEA</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ssm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="archive-article-date">
-  	<time datetime="2021-07-25T11:43:12.605Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/25/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络基础知识</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/23/%E9%98%BF%E9%87%8C%E4%BA%91%E5%AE%9E%E7%8E%B0%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/" class="archive-article-date">
-  	<time datetime="2021-07-22T17:00:27.265Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/23/%E9%98%BF%E9%87%8C%E4%BA%91%E5%AE%9E%E7%8E%B0%E7%9F%AD%E4%BF%A1%E9%AA%8C%E8%AF%81%E7%A0%81%E7%99%BB%E5%BD%95/">阿里云实现短信验证码登录</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">后端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/07/22/hello-world/" class="archive-article-date">
-  	<time datetime="2021-07-22T14:05:21.463Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/07/22/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -597,8 +403,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
